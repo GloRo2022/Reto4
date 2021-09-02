@@ -1,0 +1,11 @@
+CREATE TABLE `bicimoto`.`Int_de_compra` (
+  `alias` CHAR(20) NOT NULL,
+  `Int_bici` CHAR(20) NULL,
+  `Int_moto` CHAR(20) NULL,
+  `Fecha` DATETIME NULL,
+  INDEX `alias_idx` (`alias` ASC) VISIBLE,
+  CONSTRAINT `alias`
+    FOREIGN KEY (`alias`)
+    REFERENCES `bicimoto`.`clientes` (`alias_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
